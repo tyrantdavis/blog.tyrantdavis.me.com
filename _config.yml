@@ -11,8 +11,8 @@ theme_settings:
 
   # Header and footer text
   header_text: >
-     <h1>Witty & Hilarious Rails Developer</h1>
-     <p>I'm a kickass developer specializing in Rails, AngularJS, and MongoDB.</p>
+     <h1>Fun & Creative Software Engineer</h1>
+     <p>Hi. I am Tyrant. I am passionate about life, the Internet of Things, and developing computer applications for business solutions. </p>
   header_text_feature_image:
   footer_text: >
    Powered by <a href="http://jekyllrb.com">Jekyll</a> and made with love.
