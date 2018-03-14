@@ -5,9 +5,8 @@ url: "http://www.your-domain.com" # the base hostname & protocol for your site
 # THEME-SPECIFIC CONFIGURATION
 theme_settings:
   # Meta
-  title: Tyrant Davis # Your name will go here
-  description: "A personal software engineering and development portfolio and blog website" # used by search engines
- # used by search engines
+  title: Tyrant Davis
+  description: "A personal software engineering and development portfolio and blog website"
 
   # Header and footer text
   header_text: >
@@ -19,16 +18,16 @@ theme_settings:
 
   # Icons
   rss: false
-  email_address: "tyrantdavisengineer@gmail.com" # Full email address, e.g. "sam@example.com"
+  email_address: "tyrantdavisengineer@gmail.com"
   behance:
   bitbucket:
   dribbble:
   facebook:
   flickr:
-  github: "tyrantdavis" # github profile name, e.g. "madebymunsters"
+  github: "tyrantdavis"
   google_plus:
   instagram:
-  linkedin:  "https://www.linkedin.com/in/tyrantdavis/" # Full URL
+  linkedin:  "https://www.linkedin.com/in/tyrantdavis/"
   pinterest:
   reddit:
   soundcloud:
