@@ -6,7 +6,8 @@ url: "http://www.your-domain.com" # the base hostname & protocol for your site
 theme_settings:
   # Meta
   title: Tyrant Davis # Your name will go here
-  description: "A personal portfolio and blog website" # used by search engines
+  description: "A personal software engineering and development portfolio and blog website" # used by search engines
+ # used by search engines
 
   # Header and footer text
   header_text: >
