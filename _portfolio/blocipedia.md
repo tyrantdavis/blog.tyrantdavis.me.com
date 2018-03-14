@@ -7,7 +7,7 @@ short-description: Blocipedia is a production quality SaaS web application which
 ---
 
 {:.center}
-![]({{ site.baseurl }}/img/blocipedia.png)
+![]({{ site.baseurl }}/img/home.png)
 
 ## Explanation
 
@@ -39,56 +39,92 @@ The aim for this project was to further my backend knowledge and skills of Ruby 
 
 ## Solution
 
-The initial stages of the app involved generating a new Rails app configuring git and Github for collaboration and adding default gems for the project.
+The initial stages of the app involved generating a new Rails app, configuring git and Github for collaboration, and adding default gems for the project.
 
 {% highlight Ruby %}
 
 $ rails _4.2.5_ new new-rails-project —skip-test-unit
 $ cd new-rails-project
 {% endhighlight %}
-From there I generated a Welcome controller and related views, using HTML and CSS, which gave users a landing page to welcome them to the app. To sign users up for the app I and add user authentication I incorporated Devise. I then created a Devise User model.
+
+From there I generated a Welcome controller and related views, using HTML and CSS. This gave users a landing page to welcome them to the app. I created an index view which indexed all blocmarks for all to see, including those just visiting the site. A creative and playful **call to action** was included to grab the users attention. It also guides the user to the unusually placed pagination just below.
+
+![Blocmark Entry](/img/index.png)
+
+
+To sign users up for the app I added user authentication by incorporating Devise. I then created a Devise User model.
 
 {% highlight Ruby %}
 $ rails g devise user
 {% endhighlight %}
 
-Sendgrid was integrated into the app which allowed the app to send confirmation emails. To securely configure Sendgrid username and password the Figaro gem was used. I find myself using this gem quite a bit.  For sign-in sign-out capabilities I used the Devise helper method user_signed_in? which determined if a user was signed in and rendered a particular view based on the response. The navigation links Edit Profile and Sign Out indicated a user was signed in. The user would see the Sign-up or Sign In navigation links if not signed in.   
+![Blocmark Entry](/img/signup.png)
 
-To enable users to Create, Read, Update, and Delete public wikis I generated a wiki model that references the user, a controller, and views for the resource.
+
+_Sendgrid_ was integrated into the app which allowed the app to send confirmation emails. To securely configure Sendgrid username and password the _Figaro_ gem was used. I find myself using this gem quite a bit.  
+
+![Figaro Logo](/img/figaro.png)
+
+For sign-in sign-out capabilities I used the _Devise_ helper method `user_signed_in?` which determined if a user was signed in and rendered a particular view based on the response. The navigation links **Edit Profile** and **Sign Out** indicated a user was signed in. The user would see the **Sign-up** or **Sign In** navigation links if not signed in.   
+
+![Blocmark Entry](/img/login.png)
+
+I generated a wiki model that references the user, plus a controller, and views for the resource. It enabled users to <span style="color: red">Create</span>, <span style="color: red">Read</span>, <span style="color: red">Update</span>, and <span style="color: red">Delete</span> public wikis.
+
+_Faker_ was used to seed the database.
+
+![Blocmark Entry](/img/entry.png)
+
+
 
 {% highlight Ruby %}
 $ rails g model Wiki title:string body:text private:boolean user:references:index
 {% endhighlight %}
 
-For authorization I used the Pundit gem. I defined three user roles: standard, premium, admin using an enum attribute on the User model. The after_initialize callback implemented standard as the default value for users. For this project I wanted to allow users to edit any public wiki unlike Bloccit where the user had to be an admin. To do so the **#update** method for application policy was modified to:
+_Pundit_  was used for authorization. I defined three user roles: **standard, premium, admin** using an **_enum_** attribute on the User model. The `before_save` callback implemented standard as the default value for users.
+
 {% highlight Ruby %}
-_app/policies/application_policy.rb_
+app/models/user.rb
+...
+before_save { self.role ||= :standard }
+...
+enum role: [:standard, :premium, :admin]
+...
+{% endhighlight %}
+
+For this project I wanted to allow users to edit any public wiki unlike Bloccit where the user had to be an admin. To do so the **#update** method for application policy was modified to:
+{% highlight Ruby %}
+app/policies/application_policy.rb
 
   def update?
-    user.present?
+    user.present? &&( (record.user == user) || user.admin? )
   end
     {% endhighlight %}
-An inner Scope class was added to the wiki_policy regulate which wikis populated on the index page. The scope was then used to modify the **#index** action in the wikis_controller to show the right wikis.
+An inner Scope class was added to the _wiki_policy_ to regulate which wikis populated on the index page. The scope was then used to modify the **#index** action in the wikis_controller to show the right wikis and limit the # of wikis shown per page.
 
 {% highlight Ruby %}
-  -  def index
-  -   @wikis = Wiki.all
-  -  end
 
-   +  def index
-   +   @wikis = policy_scope(Wiki)
-   +  end  
+def index
+  @wikis = policy_scope(Wiki).paginate(page: params[:page], per_page: 6)
+end  
    {% endhighlight %}
-   
-Stripe was later integrated for payment processing. This feature was necessary to allow users a path to upgrading to a premium account. To create charges a ChargesController was generated with a **#create** action and a **#new** action. This controller initializes and then creates Charge objects after receiving to params: stripeToken and amount , ultimately sending them through Stripes API to complete the transaction. I also designed a user flow for down grading or reverting back to a standard account.
 
-To handle private wikis I implemented some privacy controls on wikis that checked to see if the users role was admin or  premium  before allowing a private wiki to be edited. The control included in wikis partial app/views/wikis/ \_form.html.erb presented a checkbox only viewable by premium users or an admin.
+_Stripe_ was later integrated for payment processing. This feature was necessary to allow users a path to upgrading to a premium account. A ChargesController was generated with a **#create** action and a **#new**. This controller initializes and then creates Charge objects after receiving **`params: stripeToken`** and **`amount`** , ultimately sending them through Stripes API to complete the transaction. I also designed a user flow for down grading or reverting back to a standard account.
 
-In order to parse Markdown syntax Redacarpet was integrated.  
+I implemented some privacy controls on wikis to manage private wikis. Controls checked to see if the users role was admin or  premium  before allowing a private wiki to be edited. The control included in wikis partial  ` app/views/wikis/ \_form.html.erb ` presented a checkbox only viewable by premium users or an admin.
+
+_Redacarpet_ was integrated in order to parse Markdown syntax .  
 
 The last resource generated was the Collaborator. A collaborator model was built to allow users to add and remove collaborators from private wikis from the wiki’s edit page. A relationship between wikis and users was established through the collaborators model by implementing a has many through relationship.  
 
+{% highlight Ruby %}
+collaborator.rb
 
+class Collaborator < ActiveRecord::Base
+  belongs_to :user
+  belongs_to :wiki
+end
+{% endhighlight %}
 
 
 
