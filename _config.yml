@@ -15,11 +15,11 @@ theme_settings:
      <p>Hi. I am Tyrant. I am passionate about life, the Internet of Things, and developing computer applications for business solutions. </p>
   header_text_feature_image:
   footer_text: >
-   Powered by <a href="http://jekyllrb.com">Jekyll</a> and made with love.
+   Powered by <a href="http://jekyllrb.com">Jekyll</a>.
 
   # Icons
   rss: false
-  email_address: # Full email address, e.g. "sam@example.com"
+  email_address: "tyrantdavisengineer@gmail.com" # Full email address, e.g. "sam@example.com"
   behance:
   bitbucket:
   dribbble:
