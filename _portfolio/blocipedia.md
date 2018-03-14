@@ -47,9 +47,9 @@ $ rails _4.2.5_ new new-rails-project —skip-test-unit
 $ cd new-rails-project
 {% endhighlight %}
 
-From there I generated a Welcome controller and related views, using HTML and CSS. This gave users a landing page to welcome them to the app. I created an index view which indexed all blocmarks for all to see, including those just visiting the site. A creative and playful **call to action** was included to grab the users attention. It also guides the user to the unusually placed pagination just below.
+I generated a Welcome controller and related views, using HTML and CSS from there. This gave users a landing page to welcome them to the app. I created an index view which indexed all blocmarks for all to see, including those just visiting the site. A creative and playful **call to action** was included to grab the users attention. It also guides the user to the unusually placed pagination just below.
 
-![Blocmark Entry](/img/index.png)
+![Blocipedia Index](/img/index.png)
 
 
 To sign users up for the app I added user authentication by incorporating Devise. I then created a Devise User model.
@@ -58,7 +58,7 @@ To sign users up for the app I added user authentication by incorporating Devise
 $ rails g devise user
 {% endhighlight %}
 
-![Blocmark Entry](/img/signup.png)
+![Blocipedia Signup](/img/signup.png)
 
 
 _Sendgrid_ was integrated into the app which allowed the app to send confirmation emails. To securely configure Sendgrid username and password the _Figaro_ gem was used. I find myself using this gem quite a bit.  
@@ -67,13 +67,13 @@ _Sendgrid_ was integrated into the app which allowed the app to send confirmatio
 
 For sign-in sign-out capabilities I used the _Devise_ helper method `user_signed_in?` which determined if a user was signed in and rendered a particular view based on the response. The navigation links **Edit Profile** and **Sign Out** indicated a user was signed in. The user would see the **Sign-up** or **Sign In** navigation links if not signed in.   
 
-![Blocmark Entry](/img/login.png)
+![Blocipedia Login](/img/login.png)
 
 I generated a wiki model that references the user, plus a controller, and views for the resource. It enabled users to <span style="color: red">Create</span>, <span style="color: red">Read</span>, <span style="color: red">Update</span>, and <span style="color: red">Delete</span> public wikis.
 
 _Faker_ was used to seed the database.
 
-![Blocmark Entry](/img/entry.png)
+![Blocipedia Wiki](/img/entry.png)
 
 
 
