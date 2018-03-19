@@ -60,23 +60,25 @@ To redirect users that are not signed in to the login page   I used the Devise f
 
 
 <span style="color:grey">app/controllers/application_controller.rb</span>
-```
+{% highlight ruby %}
 before_action :authenticate_user!
-```
+{% endhighlight %}
 
 To allow signed-in users to see their profile page I generated a UsersController which included a #show action.  To redirect the user to their show view after sign-in I updated the root path in routes.rb to map to the users show view.
 
 <span style="color:grey">**config/routes.rb**</span>
-```
+{% highlight ruby %}
 ...
   authenticated :user do
       root 'users#show', as: :authenticated_root
   end
 ...
-```
+{% endhighlight %}
 <br>
 
-My next task was to allow a user to create multiple to-do items. An Item model that references a user was generated to address this need.
+My next task was to allow a user to create multiple to-do items. An Item model that references a user was generated to address this need. The items controller included only <span style="color:red">C</span>reate and <span style="color:red">D</span>estroy <span style="color:red">CRUD</span> actions.
+
+
 ```
 $ rails g model Item name:string user:references
 ```
@@ -85,22 +87,22 @@ By referencing the User model a **belongs_to :user** relationship was created on
 
 <span style="color:grey">**app/models/item.rb**</span>
 
-```
+{% highlight ruby %}
 ...
 
   belongs_to :user
 ...
-```
+{% endhighlight %}
 
  An **has_many :items** relationship was established on the **User** model.
 
 <span style="color:grey">**app/models/user.rb**</span>
 
-```
+{% highlight ruby %}
 ...
   has_many :items, dependent: :destroy
 ...
-```
+{% endhighlight %}
 
 Next I generated an items controller with a #create action and ensured that it was associated with a user. I created a form partial in items directory which renders the form allowing users to submit new items. I created a partial named \_item.html.erb in the times directory to show the body of each item associated with a user. Because the items partial renders a single item it was necessary to call it multiple times to render the partial for each item. I implemented an each loop to resolve that. <span style="color:red">D</span>on’t<span style="color:red">R</span>epeat<span style="color:red">Y</span>ourself!
 
@@ -110,21 +112,21 @@ Next I generated an items controller with a #create action and ensured that it w
 My next focus was allowing users to mark items as complete and have them removed immediately. To do so I used a **:delete**  link to complete a to-do item.
 
 <span style="color:grey">**app/views/items/\_item.html.erb**</span>
-```
+{% highlight erb %}
 <%= link_to "", item, method: :delete, class: 'btn btn-danger', autofoucs: true %>
-```
+{% endhighlight %}
 I used Bootstrap's button class that create a custom *delete** button that links to the #delete action. Ajax was used to delete to-do items without reloading the page .
 
 This app is all about time frames. SO to display the time remaining on a to-do item before it was automatically deleted I used a Rails helper method called **distance_of_time_in_words** which displays the number of days since an item was generated.
 
 <span style="color:grey">**app/views/items/\_item.html.erb**</span>
-```
+{% highlight erb %}
 ...
 
   <%= distance_of_time_in_words(Time.now, item.created_at + 7.days ) %> left <br>
 
 ...
-```
+{% endhighlight %}
 
 In order to automatically delete expired to-do items I used the _Rake_ utility. It is used to automate administrative tasks in **Rails** apps. Building a custom task was necessary to accomplish what was needed. I used the Rails task generator to generate the new task from the terminal.
 
@@ -134,14 +136,14 @@ $ rails g task todo delete_items
 The above command created the file lib/tasks/todo.rake. The file included the following:
 
 <span style="color:grey">**lib/tasks/todo.rake**</span>
-```
+{% highlight ruby %}
 namespace :todo do
   desc "TODO"
   task delete_items: :environment do
   end
 
 end
-```
+{% endhighlight %}
 
 **namespace :todo** organized new tasks under the **todo** namespace.
 Task **delete_items:** defined new deleted_items tasks.
@@ -153,7 +155,7 @@ To ensure items older than seven days were deleted I modified the created task.
 
 <span style="color:grey">**lib/tasks/todo.rake**</span>
 
-```
+{% highlight ruby %}
    namespace :todo do
  -   desc "TODO"
  +  desc "Delete items older than seven days"
@@ -162,7 +164,7 @@ To ensure items older than seven days were deleted I modified the created task.
     end
 
  end
-```
+{% endhighlight %}
 To run the Rake task and delete items older than seven days
 ```
 rake todo:delete_items
@@ -175,7 +177,7 @@ All user requirements met and working as expected.
 
 I had fun with this project.  I have made several apps using Rails to this point. I cannot get enough of Rails. Incorporating rake was very interesting. I could have made the users show page private. I will do this knowing I would want this feature as a user. I could have implemented user authentication from scratch instead of using a gem. I could have automated delete Rake tasks to run daily.
 
-### Post CompletionUpdates:
+### Post Completion Updates:
 ####	 Added Features
 1. Users show page private.
 2. Automated delete Rake task to run daily.
