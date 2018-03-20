@@ -54,13 +54,13 @@ I used the _Devise_ helper method `user_signed_in?` for sign-in sign-out capabil
 
 ![Edit Profile](/img/blocMarks/editUser.png)
 
-The user would see the <span style="color:blue">Sign Up</span> or <span style="color:blue">Sign In</span> navigation links if not signed in.  I used a _Devise_ filter method to redirect users that are not signed in to the login page  . The `except [:index, :about]` syntax removes login requirement to see the index and about pages.
+The user saw the <span style="color:blue">Sign Up</span> or <span style="color:blue">Sign In</span> navigation links if not signed in.  I used a _Devise_ filter method to redirect users that are not signed in to the login page  . The `except [:index, :about]` syntax removes login requirement to see the index and about pages.
 
 
 app/controllers/application_controller.rb  
-```
+{% highlight Ruby %}
 before_action :authenticate_user!, except: [:index, :about]
-```
+{% endhighlight %}
 
 I generated a UsersController which included a **#show** action to allow signed-in users to see their profile page .  I updated the root path in **routes.rb** to map to the users show view to redirect the user to their show view after <span style="color:blue">Sign In</span>.
 
@@ -72,40 +72,41 @@ $ rails g model Topic name:string user:references:index
 By referencing the **User** model a ` belongs_to :user` relationship was created on the **Topic** model.
 
 **app/model/topic.rb**
-```
+{% highlight Ruby %}
 class Topic < ActiveRecord::Base
   belongs_to :user
 ...
 
 end
-```
+{% endhighlight %}
 
 An `has_many :topics` relationship was established on the **User** model.
 
 
-```
+
 app/models/user.rb
+{% highlight Ruby %}
 
 class User < ActiveRecord::Base
 ...
 
    has_many :topics
 end
-```
+{% endhighlight %}
 
 
 Next I generated a **Bookmark** model and associated bookmarks with topics.
 ```
 $ rails g model Bookmark url:string topic:references:index
 ```
-```
-app/models/bookmark.rb
 
+app/models/bookmark.rb
+{% highlight Ruby %}
 class Bookmark < ActiveRecord::Base
   belongs_to :topic
   ...
 end
-```
+{% endhighlight %}
 
 I generated a **Topics** controller with **#index**, **#show**, **#new**, **#edit** actions.
 ```
@@ -124,14 +125,14 @@ $ rails g controller Bookmarks show new edit
 It was important to nest **Bookmarks** resource under the **Topics** resource to make this work.  
 
 **routes.rb**
-```
+{% highlight Ruby %}
 ...
   resources :topics ...
     resources :bookmarks, except: [:index] ...
   ...
   end
 ...  
-```
+{% endhighlight %}
 
 I implemented <span style="color:red">CRUD</span> for bookmarks after completing the above actions to ensure users could create new bookmarks, view, update and delete created bookmarks.
 
@@ -140,11 +141,11 @@ My next focus was allowing users to email a <span style="color:blue">URL</span>s
 I integrated _Pundit_ into the application to handle authorization. This was necessary to only allow  users to update or delete bookmarks belonging to them. This meant adding the _Pundit_ gem to my **Gemfile** and bundling the gem.
 
 **Gemfile**
-```
+{% highlight Ruby %}
 ...
   gem 'pundit'
 ...
-```
+{% endhighlight %}
 
 ```
 $ bundle
@@ -153,22 +154,22 @@ $ bundle
 I included Pundit in the ApplicationController.
 
 **app/controllers/application_controller.rb**
-```
+{% highlight Ruby %}
 class ApplicationController < ActionController::Base
    include Pundit
    ...
-```
+{% endhighlight %}
 
 I generated a default policy file with the following command:
 
-`
+```
 $ rails g pundit:install
-`
+```
 
 Next I defined **#create**, **#update#**, and **#destroy** actions in the **application\_policy.rb** policy file
 
 **app/policies/application_policy.rb**
-```
+{% highlight Ruby %}
    def create?
      user.present?
    end
@@ -180,7 +181,7 @@ Next I defined **#create**, **#update#**, and **#destroy** actions in the **appl
    def destroy?
      user.present? && (record.user == user)
    end
-```
+{% endhighlight %}
 I created a similar policy file for bookmarks and added authorization to **BookmarksController** and its controller views.
 
 
@@ -189,13 +190,13 @@ I created a like model to give users the ability to like a bookmark. Because lik
 I created a **#liked**  method to determine if a user has liked a bookmark. It allows users to toggle between <span style="color:blue">like</span> and <span style="color:blue">unlike</span> links in views.
 
 app/models/user.rb
-```
+{% highlight Ruby %}
 ...
    def liked(bookmark)
      likes.where(bookmark_id: bookmark.id).first
    end
 ...
-```
+{% endhighlight %}
 This method receives a **bookmark** object and produces a **like** object if there is a record in the **likes table** that is properly identified with a **user_id** and a  **bookmark_id**. **Nil** is returned otherwise.
 
 
@@ -207,51 +208,64 @@ $ rails g controller Likes index
 Required routes were added to routes.rb.
 
 **config/routes.rb**
-```
+{% highlight Ruby %}
    resources :bookmarks, except: [:index] do
      resources :likes, only: [:index, :create, :destroy]
-```
+{% endhighlight %}
 
 A likes  index was created to render a list of all bookmarks.
 
 
 I built a partial to display links for liking bookmarks in the **app/views/likes/** folder. I added the following **erb** syntax to my views to render the partial :
 
-```
+{% highlight erb %}
+
      <%= render partial: 'likes/like', locals: { bookmark: @bookmark } %>
-```
+{% endhighlight %}
 
 Create and destroy methods were added to the LikesController.
 
 **app/controllers/likes_controller.rb**
-```
-   def create
-     @bookmark = Bookmark.find(params[:bookmark_id])
-     like = current_user.likes.build(bookmark: @bookmark)
+{% highlight Ruby %}
+def create
+  @bookmark = Bookmark.find(params[:bookmark_id])
+  @topic = @bookmark.topic
+  like = current_user.likes.build(bookmark: @bookmark)
+  authorize like
 
-     if like.save
-       # Add code to generate a success flash and redirect to @bookmark
-     else
-       # Add code to generate a failure flash and redirect to @bookmark
-     end
-   end
+  if like.save
+    flash[:notice] = "Bookmark successfully liked."
+    redirect_to [@topic, @bookmark]
+  else
+    flash[:error] = "Bookamrk like failed."
+    redirect_to [@topic, @bookmark  ]
+  end
+end
 
-   def destroy
-     # Get the bookmark from the params
-     # Find the current user's like with the ID in the params
+def destroy
+  # Get the bookmark from the params
+  @bookmark = Bookmark.find(params[:bookmark_id])
+  @topic = @bookmark.topic
+  # Find the current user's like with the ID in the params
+  like = current_user.likes.build(bookmark: @bookmark)
+  authorize like
 
-     if like.destroy
-       # Flash success and redirect to @bookmark
-     else
-       # Flash error and redirect to @bookmark
-     end
-   end
-```
+
+  if like.destroy
+    # Flash success and redirect to @bookmark
+    flash[:notice] = "Bookmark successfully unliked."
+    redirect_to [@topic, @bookmark]
+  else
+    # Flash error and redirect to @bookmark
+    flash[:error] = "Unlike failed. Please try again."
+    redirect_to [@topic, @bookmark]
+  end
+{% endhighlight %}
 
 A policy for likes was then added. Authorization for the **LikeContorller** was added in addition to an authorized like prior to the **IF**  statements in the **#create** and **#destroy**  actions. Authorization had to be added to the partial as well.  
 
 **app/views/likes/\_like.html.erb**
-```
+{% highlight erb %}
  <% if policy(Like.new).create? %>
    <div>
      <% if like = current_user.liked(bookmark) %>
@@ -265,7 +279,7 @@ A policy for likes was then added. Authorization for the **LikeContorller** was 
      <% end %>
    </div>
  <% end %>
-```
+{% endhighlight %}
 Lastly, I generated a **Users controller** to allow users to see a list of added or liked bookmarks on their profile pages.
 
 ```
@@ -274,10 +288,10 @@ $ rails g controller Users show
 Required routes were also added.
 
 **config/routes.rb**
-```
+{% highlight Ruby %}
 devise_for :users
  resources :users, only: [:show]
-```
+{% endhighlight %}
 
 A **#show** action was added to the UsersController to produce instance variables containing bookmarks the user has created and liked.
 
@@ -288,4 +302,7 @@ I gave users the ability to unlike bookmarks on the personal page as a final tou
 
 ## Conclusion
 
-I had fun with this project.  I have made several apps using Rails to this point. I cannot get enough of Rails. Incorporating rake was very interesting. I could have made the users show page private. I will do this knowing I would want this feature as a user. I could have implemented user authentication from scratch instead of using a gem. I could have automated delete Rake tasks to run daily.
+This was another fun application to build.  I especially enjoyed implementing Omniauth strategies to allow for multi-provider authentication. There was no need to even consider building my own authentication when the Omniauth gem makes things very easy, but that s something I could have done. The following are some other things I could have done differently:
+1. I could have used HAML instead of ERB for templating  
+2. allow users to see previews for bookmarks  
+3. parse the bookmark into readable urls. These are some great features to add in the future. 
