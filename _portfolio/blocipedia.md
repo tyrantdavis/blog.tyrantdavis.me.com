@@ -9,15 +9,15 @@ short-description: Blocipedia is a production quality SaaS web application which
 {:.center}
 ![]({{ site.baseurl }}/img/home.png)
 
-<h3 class="w3-container w3-black bold w3-opacity w3-wide">Explanation</h3>
+### Explanation
 
 Blocipedia is a CRUD application built using Ruby on Rails. This build uses some helpful gems including Stripe, Devise, Pundit, Redcarpet, and Faker.
 
-<h3 class="w3-container w3-amber bold w3-opacity w3-wide">Problem</h3>
+### Problem
 
 The aim for this project was to further my backend knowledge and skills of Ruby on Rails and gain greater exposure to some fantastic Ruby gems. Another objective was for me to meet all of the predefined user requirements.
 
-<h3 class="w3-container w3-black bold w3-opacity w3-wide">Objectives</h3>
+### Objectives
 
 * Create basic Rails user scheme
 * Giver user the ability to sign up for app using Devise
@@ -26,7 +26,7 @@ The aim for this project was to further my backend knowledge and skills of Ruby 
 * Integrate Stripe for payments
 * Integrate Redcarpet Markdown gem for rendering
 
-<h3 class="w3-container w3-amber bold w3-opacity w3-wide">User Requirements</h3>
+### User Requirements
 
 1. Allow users to sign up for a free account by providing a user name, password and email
 2. Allow users to sign in and out of Blocipedia
@@ -128,10 +128,10 @@ end
 
 
 
-<h3 class="w3-container w3-black bold w3-opacity w3-wide">Results</h3>
+### Results
 
 >All user requirements met and working as expected.
 
-<h3 class="w3-container w3-blue bold w3-opacity w3-wide">Conclusion</h3>
+### Conclusion
 
 I could have implemented authentication and authorization mechanisms from scratch which is unnecessary, but a very valuable learning tool. I could have generated the views for this app using HAML instead of ERB. I could have added a real-time Markdown editor for wikis.I am always looking to grow so these are definitely features to add to in the future or to future projects. This was a really fun project. Rails is incredible and I love it.
