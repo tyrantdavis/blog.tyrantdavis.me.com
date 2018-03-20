@@ -7,17 +7,17 @@ short-description: Build a self-destructing to-do list application.
 ---
 
 {:.center}
-![]({{ site.baseurl }}/img/taSk/landingWithGreyT.png)
+![]({{ site.baseurl }}/img/taSk/taSkHome.png)
 
-### Explanation
+<h3 class="wide">Explanation</h3>
 
 This application aims to mange to-do list by automatically removing  to-do items older than seven days. Items older than seven days are considered unimportant and should not be on your to-do list.  
 
-### Problem
+<h3 class="wide">Problem</h3>
 
 This project was meant to expand upon backend knowledge and skills, particularly Ruby on Rials. Primary object objective was for me to meet all of the predefined user requirements.  
 
-### User Requirements
+<h3 class="wide">User Requirements</h3>
 1. Allow user to sign up for a free account by providing a user name, password and email
 2. Allow users to sign in and out of Blocitoff
 3. Allow users to see my profile page
@@ -26,7 +26,7 @@ This project was meant to expand upon backend knowledge and skills, particularly
 6. Allow users to see how old a to-do item is
 7. Users to-dos should be automatically deleted seven days after their creation date
 
-### Solution
+<h3 class="wide">Solution</h3>
 To start the project a new Rails app was generated. I then configured git and Github for collaboration. Next I configured the default gems for my project. To make styling the application easier I added Bootstrap. The aforementioned steps are the initial steps for every project of course.
 
 Once the foundation for the app was laid I incorporated Devise for authentication. This step involved generating a Devise User model.
@@ -169,14 +169,14 @@ To run the Rake task and delete items older than seven days
 rake todo:delete_items
 ```
 
-### Results
+<h3 class="wide">Results</h3>
 All user requirements met and working as expected.
 
-### Conclusion
+<h3 class="wide">Conclusion</h3>
 
 I had fun with this project.  I have made several apps using Rails to this point. I cannot get enough of Rails. Incorporating rake was very interesting. I could have made the users show page private. I will do this knowing I would want this feature as a user. I could have implemented user authentication from scratch instead of using a gem. I could have automated delete Rake tasks to run daily.
 
-### Post Completion Updates
-####	 Added Features
+<h3 class="wide"> Post Completion Updates</h3>
+<h4 class="wide">	 Added Features</h4>
 1. Users show page private.
 2. Automated delete Rake task to run daily.

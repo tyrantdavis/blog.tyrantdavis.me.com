@@ -11,18 +11,18 @@ short-description: Build a bookmarking application that allows users to bookmark
 
 
 
-## Summary
+<h3 class="wide">Summary</h3>
 Build a bookmarking application that allows users to bookmark URLs via email, view other user’s bookmark and keep a personal list of bookmarks.
 
-## Explanation
+<h3 class="wide">Explanation</h3>
 
 Bookmarking is easy, but keeping a bookmark collection tidy and manageable is no so easy. Sharing bookmarks from your browser is not so easy either. Blockmarks addresses and resolves the issues mentioned by categorizing bookmarks according to topics. Blockmarks also makes bookmarks public so that other users can discover and add bookmarks to their profile.    
 
-## Problem
+<h3 class="wide">Problem</h3>
 This project was meant to expand upon my backend knowledge and skills, particularly Ruby on Rials. Primary objective was for me to meet all of the predefined user requirements.  
 
 
-## User Requirements
+<h3 class="wide">User Requirements</h3>
 
 1. Allow user to sign up for a free account by providing a user name, password and email
 2. Allow users to sign in and out of Blockmarks
@@ -34,7 +34,7 @@ This project was meant to expand upon my backend knowledge and skills, particula
 8. Allow users to see a list of bookmarks on my personal profile that I've added or liked
 
 
-## Solution
+<h3 class="wide">Solution</h3>
 a new Rails app was generated to start the project . Next I configured the default gems for my project and generated a welcome controller for a landing page which welcomes users to the application. I added _Bootstrap_ to make styling the application easier . Finally I configured _git_ and _Github_ workflow for collaboration. The aforementioned steps are the initial steps for every project of course.
 
 Once the foundation for the app was laid I incorporated and configured _Devise_ for authentication. This step involved generating a Devise User model.
@@ -297,12 +297,12 @@ A **#show** action was added to the UsersController to produce instance variable
 
 I gave users the ability to unlike bookmarks on the personal page as a final touch.
 
-## Results
+<h3 class="wide">Results</h3>
 > All user requirements met and working as expected.
 
-## Conclusion
+<h3 class="wide">Conclusion</h3>
 
 This was another fun application to build.  I especially enjoyed implementing Omniauth strategies to allow for multi-provider authentication. There was no need to even consider building my own authentication when the Omniauth gem makes things very easy, but that s something I could have done. The following are some other things I could have done differently:
 1. I could have used HAML instead of ERB for templating  
 2. allow users to see previews for bookmarks  
-3. parse the bookmark into readable urls. These are some great features to add in the future. 
+3. parse the bookmark into readable urls. These are some great features to add in the future.
