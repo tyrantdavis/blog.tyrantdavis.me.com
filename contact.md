@@ -4,13 +4,14 @@ title: Say Hello!
 permalink: /contact/
 feature-img: "img/color.png"
 ---
-<p>Welcome. Say yes to the possibilties! Get in touch. </p>
+<p id="btmpadding" class="gold">Welcome. Say yes to the possibilities!</p>
 
 <div class="contacts cntrTxt">
+  <span class="grey">Get in touch: </span>
   <a href="https://www.linkedin.com/in/tyrantdavis/">LinkedIn</a> <span class="contactPipes">|</span>
   <a href="https://www.twitter.com/tyrant_davis/">Twitter</a> <span class="contactPipes">|</span>
-  <a  href="https://github.com/tyrantdavis">GitHub</a> |
-  <a href="#" style="color:black">  Or Email Me Below</a>
+  <a  class="one" href="https://github.com/tyrantdavis">GitHub</a> |
+  <span class="grey">  Or Email Me Below</span>
 </div>
 <br>
 <form action="https://getsimpleform.com/messages?form_api_token=fe0494b3f6727a6047675242916e447" method="post">
