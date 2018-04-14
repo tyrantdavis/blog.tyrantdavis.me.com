@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Why I chose Software Development
+title: Why I chose Software Architecture.
 ---
 {:.center}
 
