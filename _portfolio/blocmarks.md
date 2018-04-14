@@ -43,7 +43,7 @@ rails g devise user
 ```
 
 
-**Rails** generated a migration file as a result. To run the migrations I executed :
+**Rails** generated a migration file as a result. To run the migrations I executed the following:
 ```
 rake db:migrate
 ```

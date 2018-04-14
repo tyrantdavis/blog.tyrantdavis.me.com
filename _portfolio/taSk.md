@@ -35,7 +35,7 @@ rails g devise user
 ```
 
 
-Rails generated a migration file as a result. To run the migrations I executed :
+Rails generated a migration file as a result. To run the migrations I executed the following:
 ```
 Rake db:migrate
 ```
@@ -178,5 +178,6 @@ I had fun with this project.  I have made several apps using Rails to this point
 
 <h3 class="wide"> Post Completion Updates</h3>
 <h4 class="wide">	 Added Features</h4>
-1. Users show page private.
-2. Automated delete Rake task to run daily.
+
+1. <span class="strikethrough">Users show page private.</span>
+2. <span class="strikethrough">Automated delete Rake task to run daily.</span>
