@@ -16,7 +16,7 @@ feature-img: "img/color.png"
 <br>
 <form class="center" action="https://getsimpleform.com/messages?form_api_token=fe0494b3f6727a6047675242916e447" method="post">
   <!-- the redirect_to is optional, the form will redirect to the referrer on submission -->
-  <input type='hidden' name='redirect_to' value='https://tyrantdavis.github.io/thank-you/' />
+  <input type='hidden' name='redirect_to' value='https://tyrantdavis.me/thank-you/' />
   <input  type='text' name='name' placeholder='Your Full Name' />
   <input type='email' name='email' placeholder='Your E-mail Address' />
   <textarea name='message' placeholder='Write your message ...'></textarea>
