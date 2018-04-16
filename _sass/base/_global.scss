@@ -124,7 +124,10 @@ img[align=right] {
 
 .a.one:link { text-decoration: none !important;}
 
-.grey { color: grey; }
+.grey {
+  font-size: 21px;
+  color: grey;
+}
 
 #btmpadding { padding-bottom: 18px; }
 
@@ -142,4 +145,9 @@ span.center {
   font-size: 36px;
   font-style: oblique;
   font-weight: bold;
+}
+
+.field-text {
+  color: grey;
+  opacity: 30%;
 }

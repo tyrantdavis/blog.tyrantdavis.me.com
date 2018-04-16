@@ -2,9 +2,10 @@
 layout: post
 title: Challenge Accepted!!
 ---
+<h3>Challenges faced while learning to develop.</h3>
+
 <span class="center">![Challenge Accepted](/img/post_images/challengeAccepted.png)</span>
 
-<h3>Challenges faced while learning to develop.</h3>
 
 <h4 class="center wide">Trying to do it all is absurd.</h4>
 

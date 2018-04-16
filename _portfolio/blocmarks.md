@@ -115,7 +115,7 @@ $ rails g controller Topics index show new edit
 
 ![New Topic](/img/blocMarks/newTopic.png)
 
-I implemented <span style="color:red">C</span>reat<span style="color:red">R</span>ead<span style="color:red">U</span>pdate<span style="color:red">D</span>estroy</span> for topics frm there.
+I implemented <span style="color:red">C</span>reat<span style="color:red">R</span>ead<span style="color:red">U</span>pdate<span style="color:red">D</span>estroy for topics frm there.
 
 I then implemented <span style="color:red">CRUD</span> for bookmarks. I generated a **Bookmarks** controller with **#show**, **#new**, **#edit** actions. No index action was created for the **BookmarksController** given that the topics show view handles the rendering.
 ```
