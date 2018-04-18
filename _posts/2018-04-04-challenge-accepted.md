@@ -11,7 +11,8 @@ title: Challenge Accepted!!
 
 <b><span class="special-text">S</span></b>oftware development is constantly and rapidly evolving. It demands that you evolve your skills set to ensure they are contemporary.  Truth be told, it is impossible to learn and know everything there is to know.  Although the tech industry rewards those with an explorer’s spirit, it is vital that you identify and focus on a programming language that captures your interest when starting out. Ruby was my language of choice. You can and should consistently build your repertoire from there. The point is to find your focus which will eventually lead to finding your specialization. There will be no shortage of things to learn even when you specialize. Trust me on that!
 
-<h4 class="center wide">One who does not experiment cannot expect results. </h4>
+<h4 class="center wide">"S/he who does not experiment cannot expect results." </h4>
+<h6 class="center author wide">Tyrant Davis</h6>
 
 <span class="center">![Challenge Accepted](/img/post_images/inTheLab.png)</span>
 
@@ -29,7 +30,8 @@ title: Challenge Accepted!!
 
 <b><span class="special-text">Y</span></b>ou will surely become frustrated with software development. It happens to the most passionate of us. There will be times where outrage is unavoidable. Learning to walk away and frequently take breaks is vital. It was one of the hardest things I had to learn to do. It is a great thing that should be practiced regularly. There is absolutely no shame in getting stuck or hitting a wall; who hasn’t? Just be sure you do not give up, always come back, and understand that when you get stuck there is a community of developers out there who have been there and are willing to collaborate and help.
 
-<h4 class="wide center">Do not let perfection be the enemy of the good.</h4>
+<h4 class="wide center">"Do not let perfection be the enemy of the good.""</h4>
+<h6 class="author wide center">Voltaire</h6>
 
 <b><span class="special-text">I</span></b> can be hard on myself at times. Surely I am not alone. I can be a perfectionist as well, and both things can be detrimental. I was especially obsessed with how my apps looked. It took some time for me to realize just how silly my thinking was. For one, I did not know enough to know how good or bad it was. Secondly, it was not my job; my job was to get things working. I am an engineer, not a designer. Sure it needed to be presentable, but obsessing over the look was unnecessary.
 

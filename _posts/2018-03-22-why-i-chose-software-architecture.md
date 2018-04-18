@@ -20,6 +20,8 @@ When I was young, I would sneak on to the roof at night and just stare at the st
 Where there is a pattern there is a set of instructions for repeating a desired result. I approached everything with the concept of patterns in mind from then on. I am willing to bet this all sounds familiar to you even if you cannot put a name on the concept. I too did not fully understand that I was toying with the concept of algorithms in my earlier years.… They are everywhere and drive everything.
 
 
+<h3 class="center">"You humans. When're you gonna learn that size doesn't matter?"</h3>
+<span class="center">![Frank The Pug](/img/post_images/frank-the-pug.jpeg)</span>
 <h3 class="center">It's all the same.</h3>
 <h5 class="center wide">Atomic Model.</h5>
 <span class="center">![Atom ](/img/post_images/atom.jpeg)</span>
