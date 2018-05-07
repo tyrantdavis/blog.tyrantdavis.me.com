@@ -2,7 +2,7 @@
 layout: post
 title: Blocipedia
 thumbnail-path: "img/home.png"
-short-description: Blocipedia is a production quality SaaS web application which allows users to create public and private Markdown based wikis and share them with other collaborators.
+short-description: Blocipedia is a production quality SaaS based web application which allows users to create public and private Markdown based wikis and share them with other collaborators.
 
 ---
 

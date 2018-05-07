@@ -15,11 +15,11 @@ This application aims to mange to-do list by automatically removing  to-do items
 
 <h3 class="wide">Problem</h3>
 
-This project was meant to expand upon backend knowledge and skills, particularly Ruby on Rials. Primary object objective was for me to meet all of the predefined user requirements.  
+This project was meant to expand upon backend knowledge and skills, particularly Ruby on Rails. Primary object objective was for me to meet all of the predefined user requirements.  
 
 <h3 class="wide">User Requirements</h3>
 1. Allow user to sign up for a free account by providing a user name, password and email
-2. Allow users to sign in and out of Blocitoff
+2. Allow users to sign in and out of taSk!
 3. Allow users to see my profile page
 4. Allow users to create multiple to-do items
 5. Allow users to mark to-do items as complete and have them deleted
