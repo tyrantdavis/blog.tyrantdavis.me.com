@@ -10,7 +10,7 @@ I remember taking apart gaming systems, computers, or anything I could get my ha
 
 <span class="center">![Star Gazing](/img/post_images/gazingAtTheStars.jpeg)</span>
 
-<b class="wide"><span class="special-text">I</span></b> have always questioned my surroundings demanding to know and understand the meaning of it all.
+<b class="wide"><span class="special-text">I</span></b> have always questioned my surroundings demanding to know and understand the meaning of it <span class="w3-text-magenta w3-jumbo">all.</span>
 
 When I was young, I would sneak on to the roof at night and just stare at the stars wondering how it all worked.  Sorry mother. I would ask questions such as what are the mechanics of the universe? How does this all fit together? How does nature know when to do this to get that? What is the force that drives nature? How is life possible? Seriously. Those questions eventually led me to the realization that patterns were the key to my understanding. Surely I would never know everything - not even remotely close to it.  I thought that if I could just isolate and understand the patterns a lot would be revealed - that was the plan at least. So I started paying attention to nature’s cycles: night and day, the four seasons, weather, the wave cycle, the precessions of the equinox, etc. when many never contemplate, consider or question such things. This may sound boring to you, but it excites me. Nature is the best teacher after all. 
 

@@ -5,7 +5,7 @@
       {% if page.title and page.hide != true %}
       <li>
         <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">
-          {{ page.title }}
+          {{ page.title }} <!-- Renders About and Say Hello links on post and portfolio pages plu about & say hello pages-->
         </a>
       </li>
       {% endif %}
@@ -14,13 +14,16 @@
   </nav>
 
   {% if site.theme_settings.header_text %}
-  <div class="call-out" 
+  <div class="call-out"
   style="background-image: url('{{ site.baseurl }}/{{ site.theme_settings.header_text_feature_image }}')">
     <h1 class="site-title">
-      <a href="{{ site.baseurl }}/">{{ site.theme_settings.title }}</a>
+      <a href="{{ site.baseurl }}/"> {{ site.theme_settings.title }}</a>
     </h1>
+    <h5>
+			<a class="w3-opacity-max" href="https://www.tyrantdavis.me/">Home</a>
+		</h5>
     <div class="divider"></div>
-    <h1 class="title">{{ page.title }}</h1>
+    <h1 class="title">{{ page.title }}</h1> <!-- Post and Portfolio Big titles beneath Tyrant Davis i.e. Challenge Accepted! -->
   </div>
   {% endif %}
 </header>
