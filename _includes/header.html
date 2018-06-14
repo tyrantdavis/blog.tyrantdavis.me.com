@@ -1,11 +1,12 @@
-<header class="site-header">
+<!-- This is file produces everything in the header on each page from the social icons up -->
+<header class="site-header"> <!-- class="site-headers" Renders look of Tyrant Davis and About & Say Hello links on home page.  -->
 	<nav class="site-nav">
 		<ul>
-			{% for page in site.pages %}
+			{% for page in site.pages %} <!-- Renders About and Say Hello links for every page except home/langin page. -->
 			{% if page.title and page.hide != true %}
 			<li>
 				<a class="page-link" href="{{ page.url | prepend: site.baseurl }}">
-					{{ page.title }}
+					{{ page.title }} <!-- This is the About and Say Hello! links on the home/landing page -->
 				</a>
 			</li>
 			{% endif %}
@@ -13,18 +14,21 @@
 		</ul>
 	</nav>
 
-	{% if site.theme_settings.header_text %}
-  <div class="call-out" 
+	{% if site.theme_settings.header_text %} <!-- see config.yml -->
+  <div class="call-out"
   style="background-image: url('{{ site.baseurl }}/{{ site.theme_settings.header_text_feature_image }}')">
   	<h1 class="site-title">
-			<a href="{{ site.baseurl }}/">{{ site.theme_settings.title }}</a>
+			<a href="{{ site.baseurl }}/">{{ site.theme_settings.title }}</a> <!-- This is the Tyrant Davis at the top of every page -->
 		</h1>
+		<h5>
+			<a class="w3-opacity-max" href="https://www.tyrantdavis.me/">Home</a>
+		</h5>
 		<div class="divider"></div>
-    {{ site.theme_settings.header_text }}
+    {{ site.theme_settings.header_text }} <!-- Fun& creative softw...  -->
     <div class="divider"></div>
     <!-- Social icons from Font Awesome, if enabled -->
 	  <ul>
-	    {% include icons.html %}
+	    {% include icons.html %} <!-- Embeds Icons -->
 		</ul>
   </div>
   {% endif %}
