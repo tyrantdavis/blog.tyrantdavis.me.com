@@ -1,8 +1,15 @@
 ---
 layout: post-header
 ---
+
 <article>
+  <!-- Social icons from Font Awesome, if enabled -->
+  <div class="container">
+    <ul class="icons w3-large w3-center w3-padding-left" id="icon-align">
+      {% include icons.html %} <!-- Embeds Icons -->
+    </ul>
+    <br>
   <section class="post-content">{{ content }}</section>
 </article>
-
+</div>
 <!-- Renders the about and contact/say hello pages. Only affects these pages. -->
