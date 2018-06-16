@@ -1,9 +1,13 @@
 ---
 layout: page
-title: Say Hello!
+title:  Connect With Me
 permalink: /contact/
 
 ---
+
+![logo](/assets/SVG/hello@me.svg  ){:class="center-image w3-mobile"  #logo-padding}
+
+
 <div class="w3-hal w3-white w3-container w3-text-black w3-mobile" style="height:700px">
 
   <div class="w3-padding-64 w3-padding-large w3-mobile">
@@ -42,7 +46,7 @@ permalink: /contact/
 
       </div>
 
-      <button type="submit" class="w3-button w3-black w3-hover-yellow w3-right  w3-mobile">Send</button>
+      <button type="submit" class="w3-button w3-black w3-hover-white w3-right  w3-mobile">Send</button>
 
     </form>
     <p class="w3-text-night w3-wide w3-mobile">Thanks for saying<span class="w3-text-magenta"> Hi</span>!</p>

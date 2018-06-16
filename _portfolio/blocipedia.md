@@ -6,9 +6,6 @@ short-description: Blocipedia is a production quality SaaS based web application
 
 ---
 
-{:.center}
-![]({{ site.baseurl }}/img/home.png)
-
 <h3 class="wide">Explanation</h3>
 
 Blocipedia is a CRUD application built using Ruby on Rails. This build uses some helpful gems including Stripe, Devise, Pundit, Redcarpet, and Faker.

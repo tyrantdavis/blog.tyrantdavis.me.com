@@ -5,12 +5,6 @@ thumbnail-path: "img/blocMarks/homePostSignout.png"
 short-description: Build a bookmarking application that allows users to bookmark URLs via email, view other user’s bookmark and keep a personal list of bookmarks.
 ---
 
-{:.center}
-![]({{ site.baseurl }}/img/blocMarks/homePostSignOut.png)
-
-
-
-
 <h3 class="wide">Summary</h3>
 Build a bookmarking application that allows users to bookmark URLs via email, view other user’s bookmark and keep a personal list of bookmarks.
 

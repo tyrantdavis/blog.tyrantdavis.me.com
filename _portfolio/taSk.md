@@ -6,9 +6,6 @@ short-description: Build a self-destructing to-do list application.
 
 ---
 
-{:.center}
-![]({{ site.baseurl }}/img/taSk/taSkHome.png)
-
 <h3 class="wide">Explanation</h3>
 
 This application aims to mange to-do list by automatically removing  to-do items older than seven days. Items older than seven days are considered unimportant and should not be on your to-do list.  
