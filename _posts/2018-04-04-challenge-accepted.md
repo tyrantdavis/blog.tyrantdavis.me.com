@@ -3,7 +3,7 @@ layout: posts
 title: Challenge Accepted!!
 
 ---
-<!-- ![muscle-man](/assets/SVG/muscular-man-flexing-silhouette.svg){:class="w3-responsive w3-mobile center w3-padding-large w3-opacity"} -->
+
 <p class="w3-center w3-padding-large">
 <img class="w3-opacity" src="/assets/SVG/muscular-man-flexing-silhouette.svg">
 </p>
