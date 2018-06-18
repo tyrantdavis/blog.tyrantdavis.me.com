@@ -181,8 +181,9 @@ sub {
  * Remove border when inside `a` element in IE 8/9/10.
  */
 
-img {
+.img-resize {
   border: 0;
+  max-width: 600px;
 }
 
 /**
