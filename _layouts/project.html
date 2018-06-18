@@ -1,0 +1,13 @@
+---
+layout: posts-header
+---
+<article class="w3-container w3-margin"{% if page.feature-img %}class="feature-image"{% endif %}>
+  <section class="w3-mobile post-conten w3-section w3-border-white">{{ content }}</section>
+</article>
+
+<!-- Disqus -->
+ {% if site.theme_settings.disqus_shortname %}
+<div class="comments">
+  {% include disqus.html %}
+</div>
+{% endif %}
