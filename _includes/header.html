@@ -1,18 +1,6 @@
 <!-- This is file produces everything in the header on each page from the social icons up -->
 <header class="site-header"> <!-- class="site-headers" Renders look of Tyrant Davis and About & Say Hello links on home page.  -->
-	<nav class="site-nav">
-		<ul>
-			{% for page in site.pages %} <!-- Renders About and Say Hello links for every page except home/langin page. -->
-			{% if page.title and page.hide != true %}
-			<li>
-				<a class="page-link" href="{{ page.url | prepend: site.baseurl }}">
-					{{ page.title }} <!-- This is the About and Say Hello! links on the home/landing page -->
-				</a>
-			</li>
-			{% endif %}
-			{% endfor %}
-		</ul>
-	</nav>
+
 
 	{% if site.theme_settings.header_text %} <!-- see config.yml -->
   <div class="call-out"

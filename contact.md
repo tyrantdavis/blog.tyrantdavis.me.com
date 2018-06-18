@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: page  
 title:  Connect With Me
 permalink: /contact/
 
@@ -14,7 +14,6 @@ permalink: /contact/
 
     <h1  id="contact" class="w3-wide w3-mobile"></h1>
     <div class="w3-row">
-      <!-- Social icons from Font Awesome, if enabled -->
       <div class="w3-third w3-mobile">
 
         <br />
