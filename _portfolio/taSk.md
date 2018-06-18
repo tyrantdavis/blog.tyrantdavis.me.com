@@ -7,8 +7,6 @@ short-description: "&bull; Self-destructing to-do list Rails app &bull; Automati
 "
 ---
 
-{:.center}
-<!-- ![]({{ site.baseurl }}/img/taSk/taSkHome.png) -->
 <p align="center">
   <img  class="img-resize" src="/assets/images/taSk/taSkHome.png" alt="user profile">
 </p>
@@ -47,7 +45,7 @@ Rake db:migrate
 
 This allowed users to sign up for the application and send emails for confirmation.
 
-<!-- ![Sign In](/img/taSk/signUp.png) -->
+
 <p align="center">
   <img  class="img-resize" src="/assets/images/taSk/signUp.png" alt="user profile">
 </p>
@@ -56,14 +54,14 @@ For __sign-in sign-out capabilities__ I used the _Devise_ helper method **user_s
 
 The navigation links _Edit Profile and Sign Out_ indicated a user was signed in.
 
-<!-- ![Signed In](/img/taSk/taskList.png) -->
+
 <p align="center">
   <img  class="img-resize"  src="/assets/images/taSk/taskList.png" alt="user profile">
 </p>
 
 The user saw _Sign-up or Sign In_ navigation links if not signed in.  
 
-<!-- ![Sign Up](/img/taSk/signUp.png) -->
+
 <p align="center">
   <img  class="img-resize"  src="/assets/images/taSk/signUp.png" alt="user profile">
 </p>
@@ -128,7 +126,7 @@ By referencing the User model a **belongs_to :user** relationship was created on
 
 Next I generated an items controller with a _#create_ action and ensured that it was associated with a user. I created a form partial in items directory which renders the form allowing users to submit new items. I created a partial named \_item.html.erb in the times directory to show the body of each item associated with a user. Because the items partial renders a single item it was necessary to call it multiple times to render the partial for each item. I implemented an each loop to resolve that. <span class="w3-text-magenta">D</span>on’t<span class="w3-text-magenta">R</span>epeat<span class="w3-text-magenta">Y</span>ourself!
 
-<!-- ![User Show As Root](/img/taSk/fullListNoLogo.png) -->
+
 <p align="center">
   <img  class="img-resize"  src="/assets/images/taSk/fullListNoLogo.png" alt="user profile">
 </p>

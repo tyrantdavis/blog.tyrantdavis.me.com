@@ -5,7 +5,7 @@
       {% if page.title and page.hide != true %}
       <li>
         <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">
-          {{ page.title }} <!-- Renders About and Say Hello links on post and portfolio pages plu about & say hello pages-->
+          {{ page.title }}
         </a>
       </li>
       {% endif %}
@@ -23,7 +23,6 @@
 			<a class="w3-opacity-max" href="https://www.tyrantdavis.me/">Home</a>
 		</h5>
     <div class="divider"></div>
-    <h1 class="title">{{ page.title }}</h1> <!-- Post and Portfolio Big titles beneath Tyrant Davis i.e. Challenge Accepted! -->
-  </div>
+    <h1 class="title">{{ page.title }}</h1> 
   {% endif %}
 </header>
