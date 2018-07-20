@@ -11,7 +11,7 @@ title: Challenge Accepted!!
 <div class="w3-row-padding">
 
 
-  <div class="w3-half">
+<div class="w3-half">
 
 
     <h6 class="w3-wide w3-center w3-opacity">Trying to do it all is absurd.</h6>
