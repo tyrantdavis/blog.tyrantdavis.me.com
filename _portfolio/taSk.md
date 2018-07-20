@@ -6,6 +6,7 @@ short-description: "&bull; Self-destructing to-do list Rails app &bull; Automati
 &bull;  Implements Devise, Pundit, Bootstrap, Faker, Figaro, PostgreSQL, Send Grid, Factory Girls.
 "
 ---
+ [Link to: **taSk!**](https://github.com/tyrantdavis/taSk)
 
 <p align="center">
   <img  class="img-resize" src="/assets/images/taSk/taSkHome.png" alt="user profile">

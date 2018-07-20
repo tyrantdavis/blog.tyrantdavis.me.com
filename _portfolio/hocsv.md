@@ -5,7 +5,7 @@ thumbnail-path: "assets/images/building_ruby_gems/ruby.png"
 published: true
 short-description: "&bull; Hocsv is a Ruby library / gem that takes an array of hashes and parses the data into a csv file."
 ---
-
+ [Link to: **Hocsv**](https://github.com/tyrantdavis/hocsv)
 <h3 class="wide w3-center">Summary</h3>
 
 How I built my Ruby gem.

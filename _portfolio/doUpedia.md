@@ -6,6 +6,7 @@ short-description: "&bull; DoUpedia is a production quality SaaS web application
 
 ---
 
+ [Link to: **doUpedia**](https://github.com/tyrantdavis/doupedia)
 
 <p align="center">
   <img  class="img-resize"   src="/assets/images/doUpedia/doUpediaHome.png" alt="home">
