@@ -1,7 +1,7 @@
 ---
 layout: project
 title: doUpedia
-thumbnail-path: "assets/images/doUpedia/home.png"
+thumbnail-path: "assets/images/doUpedia/doUpediaHome.png"
 short-description: "&bull; DoUpedia is a production quality SaaS web application which allows users to create public and private Markdown based wikis and share them with other collaborators. &bull; Built on Rails &bull; Incorporates  Stripe, Devise, Redcarpet, Pundit, Sendgrid, Figaro, and Faker"
 
 ---
