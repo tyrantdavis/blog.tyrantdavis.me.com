@@ -6,7 +6,7 @@ layout: default
 
   <div class="work w3-half w3-center w3-container">
     <h2 class="w3-wide">My Work</h2>
-    {% for project in site.portfolio limit:3 %}
+    {% for project in site.portfolio limit:6 %}
     <div class="project w3-round-small w3-hover-shadow w3-leftbar w3-rightbar w3-border-white w3-hover-border-cyan white no-border-bottom w3-padding-16 w3-mobile">
       <div class="project-thumb">
         <a href="{{ project.url | prepend: site.baseurl }}">
